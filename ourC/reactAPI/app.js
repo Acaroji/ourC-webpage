@@ -29,6 +29,14 @@ if(config.enviroment === "production"){
 }
 
 // view engine setup
+
+if(config.enviroment === "production"){
+  app.use(cors({
+    origin:'http://142.93.225.133',
+    credentials:true
+  }))
+}
+
 if(config.enviroment === "development"){
   app.use(cors({
     origin:'http://localhost:3000',

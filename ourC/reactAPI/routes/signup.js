@@ -3,9 +3,7 @@ const router = express.Router()
 const mongoose= require('mongoose')
 
 var User = require('../models/User');
-// const User = mongoose.model('User')
-const bcrypt = require("bcryptjs");
-const bcryptSalt = 10;
+// const User = mongoose.model('User'
 
 router.post("/",(req,res,next)=>{
     debugger
@@ -14,8 +12,7 @@ router.post("/",(req,res,next)=>{
     const password = req.body.password;
     const email = req.body.email;
     const country = req.body.country;
-    const salt     = bcrypt.genSaltSync(bcryptSalt);
-    const hashPass = bcrypt.hashSync(password, salt);
+    
     let error  = []; 
 
     if(!req.body.username) {
@@ -31,7 +28,7 @@ router.post("/",(req,res,next)=>{
     } else {
         const newUser = {
             username: req.body.username,
-            password: hashPass,
+            password: req.body.password,
             email:req.body.email,
             country:req.body.country
         }

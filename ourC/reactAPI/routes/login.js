@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
       }
       else{
         res.status(403).send('Invalido subnormal')
-      }bcryptjs
+      }
   }).catch(err => console.log(err))
 })
 
