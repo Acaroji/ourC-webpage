@@ -1,0 +1,4 @@
+{
+    "enviroment":"production",
+    "baseUrl": "http://localhost:4000"
+}
